@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8">
+<title>게시판0001</title>
+  <style>
+    * {
+        margin:0;
+        padding:0;
+    }
+    body {
+        font-family:"맑은 고딕", "돋움";
+        font-size:12px;
+        color:#444444;
+    }
+    ul {
+        list-style-type:none;
+    }
+    .clear {
+        clear:both;
+    }
+    #wrap {
+        width:760px;
+        margin:0 auto;
+    }
+    section#main {
+        width:758px;
+        float:right;
+    }
+    section#main h2#board_title {
+        margin-top:20px;
+        padding:0 0 5px 0;
+        border-bottom:solid 1px #bbbbbb;
+    }
+    section#main #total_search {
+        height:35px;
+        position:relative;
+    }
+    section#main #total {
+        position:absolute;
+        top:10px;
+    }
+    section#main #search {
+        position:absolute;
+        left:460px;
+    }
+    section#main #search #select_img {
+        position:absolute;
+        top: 9px;
+    }
+    section#main #search #search_select {
+        position:absolute;
+        top: 5px;
+        left: 60px;
+    }
+    section#main #search #search_input {
+        position:absolute;
+        top:7px;
+        left:130px;
+    }
+    section#main #search #search_input input {
+        width:100px;
+    }
+    section#main #search #search_btn {
+        position:absolute;
+        top:6px;
+        left:240px;
+    }
+    section#main table {
+        border-collapse:collapse;
+        margin:0 auto;
+        width:100%;
+    }
+    section#main tr {
+        height:30px;
+    }
+    section#main th {
+        border-top:solid 2px #aaaaaa;
+        background-color:#eeeeee;
+    }
+    section#main td {
+        border-bottom:solid 1px #dddddd;
+    }
+    section#main td.col1 {
+        width:60px;
+        text-align:center;
+    }
+    section#main td.col2 {
+    }
+    section#main td.col3 {
+        width:60px;
+        text-align:center;	
+    }
+    section#main td.col4 {
+        width:80px;
+        text-align:center;	
+    }
+    section#main td.col5 {
+        width:60px;	
+        text-align:center;
+    }
+    section#main td a:link {
+        text-decoration:none;
+        color:#444444;
+    }
+    section#main td a:hover {
+        text-decoration:none;
+        color:#444444;
+    }
+    section#main td a:visited {
+        text-decoration:none;
+        color:#444444;
+    }
+    section#main td a:active {
+        text-decoration:none;
+        color:#444444;
+    }
+    section #buttons {
+        margin-top:20px;
+    }
+    section #buttons .col1 {
+        float:left;
+        margin-left:300px;
+    }
+    section #buttons .col2 {
+        float:right;
+        margin-right:10px;
+    }
+  </style>
+</head>
+<body>
+<div id="wrap">
+  <section id="main">
+    <h2 id="board_title">게시판 </h2>
+    <div id="total_search">
+      <div id="total">▷ 총 3개의 게시물이 있습니다.</div>
+      <div id="search">
+        <div id="select_img"><img src="select_search.gif"></div>
+        <div id="search_select">
+          <select>
+            <option>제목</option>
+            <option>내용</option>
+            <option>글쓴이</option>
+          </select> 
+        </div>
+        <div id="search_input"><input type="text"></div>
+        <div id="search_btn"><img src="search_button.gif"></div>
+      </div>
+    </div>
+    <table>
+      <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>글쓴이</th>
+        <th>일시</th>
+        <th>조회수</th>
+      </tr>
+      <tr>
+        <td class="col1">1</td>
+        <td class="col2">
+          <a href="board_view.html">게시글 1 입니다.</a>
+        </td>
+        <td class="col3">김준석</td>
+        <td class="col4">2022-05-16</td>
+        <td class="col5">15</td>
+      </tr>
+      <tr>
+        <td class="col1">2</td>
+        <td class="col2">
+          <a href="board_view.html">게시글 2 입니다.</a>
+        </td>
+        <td class="col3">김준석</td>
+        <td class="col4">2022-05-16</td>
+        <td class="col5">15</td>
+      </tr>	
+      <tr>
+        <td class="col1">3</td>
+        <td class="col2">
+          <a href="board_view.html">게시글 3 입니다.</a>
+        </td>
+        <td class="col3">김준석</td>
+        <td class="col4">2022-05-16</td>
+        <td class="col5">15</td>
+      </tr>
+    </table>
+    <div id="buttons">
+      <div class="col1">◀ 이전 1 다음 ▶</div>
+      <div class="col2">
+        <img src="list.png"> 
+        <a href="board_write.html"><img src="write.png"></a>
+      </div>
+    </div>
+  </section> <!-- section main -->
+
+</body>
+</html>

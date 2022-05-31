@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8">
+<title>게시판003</title>
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/board_view_main.css">
+<style>
+  * {
+      margin:0;
+      padding:0;
+  }
+  body {
+      font-family:"맑은 고딕", "돋움";
+      font-size:12px;
+      color:#444444;
+  }
+  ul {
+      list-style-type:none;
+  }
+  .clear {
+      clear:both;
+  }
+  #wrap {
+        width:760px;
+        margin:0 auto;
+  }
+  section#main {
+      width:758px;
+      float:right;
+  }
+  section#main h2#board_title {
+      margin-top:20px;
+      padding:0 0 5px 0;
+  }
+  section#main #view_title_box {
+      margin:10px 0 0 0;
+      padding:10px;
+      border-top:solid 2px #aaaaaa;
+      background-color:#eeeeee;	
+  } 
+  section#main #view_title_box #info {
+      margin:0 0 0 270px;
+  } 
+  section#main #view_content {
+      padding:20px 10px 10px 10px;
+      line-height:150%;
+  } 
+  section#main #comment_box {
+      height:112px;
+      position:relative;
+      background-color:#efefef;
+      border-top:solid 1px #cccccc;
+  }
+  section#main #comment_box #title_comment {
+      position:absolute;
+      top:15px;
+      left:15px;
+  }
+  section#main #comment_box textarea {
+      width:515px;
+      height:78px;
+      position:absolute;
+      top:15px;
+      left:145px;	
+  }
+  section#main #comment_box #ok_ripple {
+      position:absolute;
+      top:15px;
+      left:670px;	
+  }
+  section #buttons {
+      text-align:right;
+      margin:20px 0 0 0;
+  }
+</style>
+</head>
+<body>
+<section id="main">
+  <h2 id="board_title">게시판 </h2>
+  <div id="view_title_box"> 
+    <span>게시글 1 입니다.</span>
+    <span id="info">김준석 | 조회 : 15 | 2022-05-16 (09:00)</span>
+  </div>	
+  <p id="view_content">
+    게시판 3가지 만들기 끝났습니다!</br>
+    게시판 3가지 만들기 끝났습니다!</br>
+    게시판 3가지 만들기 끝났습니다!</br>
+    게시판 3가지 만들기 끝났습니다!</br>
+    게시판 3가지 만들기 끝났습니다!
+  </p>		
+  <div id="comment_box">
+    <textarea></textarea>
+    <img id="ok_ripple" src="ok_ripple.gif">
+  </div>
+  <div id="buttons">
+    <a href="#"><img src="delete.png"></a>		
+    <a href="board_list.html"><img src="list.png"></a>
+    <a href="board_write.html"><img src="write.png"></a>			
+  </div>
+</section>
+</body>
+</html>

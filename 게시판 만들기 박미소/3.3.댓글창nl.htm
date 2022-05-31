@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판덧글</title>
+    <style>
+.board_1 { 
+    background: #efefef;
+    border-top: 3px solid gray; 
+    padding: 10px;  
+    display: flex;
+    justify-content: space-between;
+ }
+.column{
+    display: flex;
+    flex-direction: column;
+    padding: 20px; 
+    border-bottom: 1px solid gray;  
+}
+.comment {
+    display: flex;
+    justify-content: flex-end;
+    background: #efefef;
+    padding: 20px; 
+}
+.comment+div {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px; 
+}
+.black_button{
+    box-shadow:0px 2px 2px 1px #aaa;
+    border: 0px;
+    border-radius: 3px;
+    background: linear-gradient(to bottom,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%);
+    color: white;
+    font: 12px ;
+    font-weight: bold;
+    width: 80px;
+    cursor : pointer;
+}
+.grey_button{
+    box-shadow:0px 2px 2px 1px #aaa;
+    border:0px;
+    border-radius: 3px;
+    background-color: gray;
+    color: white;
+    font: 12px ;
+    font-weight: bold;
+    width: 65px;
+    height: 30px;
+    cursor : pointer;
+}
+[type] {
+    margin-left: 10px;
+}
+    </style>
+</head>
+<body>
+    
+    <article>
+
+        <h2>게시판</h2>
+
+        <div class="board_1">
+         <span>   게시글 1 입니다.  </span>
+         <span>  김준석│조회:15│2022-05-16(09:00) </span> 
+        </div>
+        <div class="column">
+            <span> 게시판 3가지 만들기 끝났습니다! </span>
+            <span> 게시판 3가지 만들기 끝났습니다! </span>
+            <span> 게시판 3가지 만들기 끝났습니다! </span>
+            <span> 게시판 3가지 만들기 끝났습니다! </span>
+            <span> 게시판 3가지 만들기 끝났습니다! </span>
+        </div>
+
+    <form>
+        <div class="comment">
+            <textarea name="덧글" cols="100" rows="6"></textarea>
+            <input type="submit" value="덧글쓰기" class="black_button">    
+        </div>
+    </form>    
+        
+        <div>
+            <input type="button" value="삭제" class="grey_button">
+            <input type="button" value="목록" class="grey_button">           
+            <input type="button" value="글쓰기" class="black_button">         
+        </div>
+    
+
+    </article>    
+
+</body>
+</html>

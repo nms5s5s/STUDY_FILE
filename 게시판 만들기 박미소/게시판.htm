@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h2 {
+            padding-bottom: 10px;
+            border-bottom: 1px solid gray;
+        }
+
+        .aside {
+            width: 300px;
+            float: left;
+            padding-bottom: 20px;
+            /* background-color: greenyellow; */
+        }
+
+        .select-grup {
+            width: auto;
+            float: right;
+            text-align: right;
+            /* background-color: gray; */
+        }
+
+
+        
+
+        .select-dropbox {
+            height: 25px;
+            font-size: 16px;
+        }
+
+        .select-textbox {
+            height: 20px;
+        }
+
+        table.board-table {
+            width: 100%;
+            border-spacing: 0;
+        }
+
+        .container {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        .board-table th {
+            background: #eee;
+            border-top: 2px solid gray;
+            padding: 5px;
+        }
+
+        .board-table td {
+            border-bottom: 1px solid #ccc;
+            padding: 5px;
+        }
+
+        .board-table td {
+            text-align: center;
+        }
+
+        .board-table td:nth-child(2) {
+            text-align: left;
+        }
+
+        .page {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .button {
+            float: right;
+            text-align: center;
+        }
+
+        .button-gray {
+            border: 0px;
+            border-radius: 5px;
+            background-color: gray;
+            color: white;
+            font: 12px 굴림;
+            font-weight: bold;
+            width: 60px;
+            height: 30px;
+        }
+
+        .button-black {
+            border: 0px;
+            border-radius: 5px;
+            background-color: rgb(46, 46, 46);
+            color: white;
+            font: 12px 굴림;
+            font-weight: bold;
+            width: 70px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <div class="container">
+            <h2>게시판</h2>
+
+            <div class="aside">
+                ▷ 총 3개의 게시물이 있습니다.
+            </div>
+
+            <div class="select-grup">
+                <form action="">
+                    <span class="select-text">SELECT</span>
+                    <span>
+                        <select class="select-dropbox">
+                            <option value="s-title">제목</option>
+                            <option value="s-writer">글쓴이</option>
+                            <option value="s-">일시</option>
+                        </select>
+                    </span>
+                    <span>
+                        <input type="text" name="search" class="select-textbox">
+                        <input type="submit" class="button-black" value="검색" />
+                    </span>
+                </form>
+            </div>
+
+            <table class="board-table">
+                <thead>
+                    <tr>
+                        <th scope="co1" class="th-num">번호</th>
+                        <th scope="co2" class="th-title">제목</th>
+                        <th scope="co3" class="th-writer">글쓴이</th>
+                        <th scope="co4" class="th-date">일시</th>
+                        <th scope="co5" class="th-hits">조회수</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="td-num">1</td>
+                        <td class="td-title">게시글 1 입니다.</td>
+                        <td class="td-writer">김준석</td>
+                        <td class="td-date">2022-05-16</td>
+                        <td class="td-hits">15</td>
+                    </tr>
+                </tbody>
+
+                <tbody>
+                    <tr>
+                        <td class="td-num">2</td>
+                        <td class="td-title">게시글 2 입니다.</td>
+                        <td class="td-writer">김준석</td>
+                        <td class="td-date">2022-05-16</td>
+                        <td class="td-hits">15</td>
+                    </tr>
+                </tbody>
+
+                <tbody>
+                    <tr>
+                        <td class="td-num">3</td>
+                        <td>게시글 3 입니다.</td>
+                        <td class="td-writer">김준석</td>
+                        <td class="td-date">2022-05-16</td>
+                        <td class="td-hits">15</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="page">
+                <span><a href="#!">◀ 이전</a></span>
+                <span><a href="#!">1</a></span>
+                <span><a href="#!">다음 ▶</a></span>
+            </div>
+
+            <div class="button">
+                <span><input type="button" class="button-gray" value="목록"></span>
+                <span><input type="button" class="button-black" value="글쓰기"></span>
+            </div>
+        </div>
+    </article>
+</body>
+
+</html>

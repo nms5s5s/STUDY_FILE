@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8">
+<title>게시판0002</title>
+<style>
+  * {
+      margin:0;
+      padding:0;
+  }
+  body {
+      font-family:"맑은 고딕", "돋움";
+      font-size:12px;
+      color:#444444;
+  }
+  ul {
+      list-style-type:none;
+  }
+  .clear {
+      clear:both;
+  }
+  #wrap {
+      width:760px;
+      margin:0 auto;
+  }
+  section#main {
+  	width:758px;
+  	float:right;
+  }
+  section#main h2#board_title {
+      margin-top:20px;
+      padding:0 0 5px 0;
+  }
+  section#main #write_title {
+      text-align:center;
+      margin:10px 0 0 0;
+      padding:5px;
+      background-color:#eeeeee;
+      border-top:solid 2px #bbbbbb;
+      border-bottom:solid 1px #bbbbbb;	
+  }
+  section#main table {
+      border-collapse:collapse;
+      margin:0 auto;
+      width:100%;
+  }
+  section#main td {
+      border-bottom:solid 1px #dddddd;
+      padding:10px;
+  }
+  section#main td.col1 {
+      width:150px;
+      text-align:center;
+      border-right:solid 1px #cccccc;
+  }
+  section#main td.col2 {
+      padding:5px 0 0 10px;
+  }
+  section#main #name input {
+      width:100px;
+      height:16px;
+      border:solid 1px #00ba2e;
+  }
+  section#main #subject input {
+      width:550px;
+      height:16px;	
+  }
+  section#main #content textarea {
+      width:550px;
+      height:200px;	
+      margin:5px 5px 5px 0;
+  }
+  section#main #buttons {
+      text-align:right;
+      margin:10px 10px 0 0;
+  }
+</style>
+</head>
+<body>
+<section id="main">
+  <h2 id="board_title">게시판 </h2>
+  <div id="write_title"><h2>글쓰기</h2></div>
+  <table>
+    <tr id="name">
+      <td class="col1">이름</td>
+      <td class="col2"><input type="text"></td>
+    </tr>
+    <tr id="subject">
+      <td class="col1">제목</td>
+      <td class="col2"><input type="text"></td>
+    </tr>		
+    <tr id="content">
+      <td class="col1">내용</td>
+      <td class="col2"><textarea></textarea></td>
+    </tr>	
+    <tr id="upload">
+      <td class="col1">업로드(파일선택 : type="file" 사용)</td>
+      <td class="col2"><input type="text"> <input type="file"></td>
+    </tr>	
+  </table>
+  <div id="buttons">
+    <a href="#"><img src="ok.png"></a>
+    <a href="board_list.html"><img src="list.png"></a>
+  </div>
+</section>
+</body>
+</html>

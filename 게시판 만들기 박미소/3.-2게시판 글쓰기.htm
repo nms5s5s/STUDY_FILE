@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판글쓰기</title>
+    <style>
+
+        /* study: border , button , table */
+        .container {
+            width: 1000px;                              
+            margin: auto;
+            background-color: rgb(255, 255, 255);
+            
+        }
+
+
+
+    
+            
+        table.board-table {
+            width: 1000px;
+            border-spacing: 0px;
+        }
+            .board-table td:nth-child(1) {
+            width: 200px;
+            }
+
+            .board-table td:nth-child(2) {
+            width: 800px;
+            text-align: left;
+            border-left: rgb(114, 92, 92);
+            
+
+            }
+
+            .board-table th {
+            
+            background: rgb(202, 207, 206);
+            border-bottom: 5px solid rgb(132, 151, 148);
+            border-top: 5px slategrey;
+            padding: 10px;
+            }
+
+            .board-table td {
+            border-bottom: 1px solid rgb(147, 164, 165);
+            padding: 5px;
+            text-align: center;
+            }
+
+           
+
+            
+                  
+        .button {
+            float: right;
+            text-align: center;
+        }
+            .button-gray {
+            border: 0px;
+            border-radius: 5px;
+            background-color: gray;
+            color: rgb(252, 247, 247);
+            font: 12px 굴림;
+            font-weight: bold;
+            width: 60px;
+            height: 30px;
+            }
+
+            .button-black {
+            border: 0px;
+            border-radius: 5px;
+            background-color: rgb(15, 1, 1);
+            color: rgb(252, 247, 247);
+            font: 12px 굴림;
+            font-weight: bold;
+            width: 60px;
+            height: 30px;
+            }
+    </style>
+
+</head>
+<body>
+    <article>
+            <div class="container"> 
+                <h2> 게시판 </h2>
+            </div>
+            
+         
+            <table class="board-table">
+                
+            <thead>
+                    <tr> 
+                        <th colspan="2">글쓰기</th>
+                    </tr> 
+            </thead>
+             <tbody>
+                    <tr>
+                        <td>이름</td>
+                        <td> <input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>제목</td>
+                        <td> <input type="text" width : 100px> </td>
+                    </tr>
+                    <tr>
+                        <td>내용</td>
+                        <td> <textarea name="text" id="" cols="115" rows="10"></textarea></td>
+                    </tr>
+                    <tr> 
+                        <td> 업로드</td>
+                        <td> <input type="text" width="20">
+                             <input type="file">                                   
+                                                                        <!-- <input type="file">  -->
+                        </td>
+                    </tr>
+            </tbody>     
+           
+
+           
+        </table>
+        
+        <form action="" class="button">
+            <button type="submit" class="button-black">확인</button>
+            <button type="list" class="button-gray">목록</button>
+        </form>
+
+
+
+
+    </article>
+
+</body>
+</html>
