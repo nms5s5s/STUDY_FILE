@@ -1,12 +1,15 @@
 package com.example.jumptostringboot.question;
 
 import com.example.jumptostringboot.answer.Answer;
+import com.example.jumptostringboot.user.SiteUser;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 
 @Getter
@@ -21,6 +24,8 @@ public class Question {
 
     private String content;
 
+    private LocalDateTime modifyDate;
+
     @Column(insertable = false, updatable = false, columnDefinition = "date default sysdate")
     private Date createDate;
     //답변은 하나의 질문에 여러개가 달리수 있는 구조이다.n:1 관계라고 할수있다.
@@ -29,4 +34,10 @@ public class Question {
     //Question하나에 Answer여러개이므로 Question엔티티에 추가할 답변의 속성은 List형태로 구성해야한다.
     @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
     private List<Answer> answerList;
+
+    @ManyToOne
+    private SiteUser author;
+
+    @ManyToMany
+    Set<SiteUser> voter;
 }
