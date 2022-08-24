@@ -13,17 +13,16 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.expression.spel.ast.QualifiedIdentifier;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 
 import javax.persistence.criteria.*;
-import java.io.Serial;
+import java.io.File;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Optional;
+import java.util.*;
 
-import java.util.List;
 @RequiredArgsConstructor
 @Service
 public class QuestionService {
@@ -47,6 +46,7 @@ public class QuestionService {
             }
         };
     }
+//----------------------질문 목록 & 검색----------------------//
         public Page<Question> getList(int page, String kw){
 
             List<Sort.Order> sorts = new ArrayList<>();
@@ -59,6 +59,7 @@ public class QuestionService {
 
             return this.questionRepository.findAll(spec, pageable);
         }
+//----------질문 상세보기-------------//
         public Question getQuestion(Integer id) {
         Optional<Question> question = this.questionRepository.findById(id);
         if (question.isPresent()) {
@@ -68,14 +69,30 @@ public class QuestionService {
             throw new DataNotFoundException("question not found");
         }
     }
-        public void create(String subject, String content, SiteUser user) {
+//-----------------질문 작성하기 & 파일첨부----------------//
+        public void create( String subject, String content, SiteUser user, MultipartFile file) throws Exception{
+//----파일 저장 경로----//
+        String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\files";
+
+        UUID uuid = UUID.randomUUID();
+
+        String fileName = uuid + "_" + file.getOriginalFilename();
+
+        File saveFile = new File(projectPath, fileName);
+
+        file.transferTo(saveFile);
+//---------------------//
+
             Question q = new Question();
             q.setSubject(subject);
             q.setContent(content);
             q.setCreateDate(new Date());
             q.setAuthor(user);
+            q.setFilename(fileName);
+            q.setFilepath("/files/" + fileName);
             this.questionRepository.save(q);
         }
+    //------------------질문 수정------------------//
         public void modify(Question question, String subject, String content) {
             question.setSubject(subject);
             question.setContent(content);

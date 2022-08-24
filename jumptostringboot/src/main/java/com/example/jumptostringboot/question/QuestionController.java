@@ -6,6 +6,8 @@ import com.example.jumptostringboot.answer.AnswerForm;
 import com.example.jumptostringboot.user.SiteUser;
 import com.example.jumptostringboot.user.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
@@ -44,7 +47,7 @@ public class QuestionController {
         model.addAttribute("question", question);
         return "question_detail";
     }
-//------------------질문 & 답변-------------------------
+//------------------질문 작성-------------------------
     @PreAuthorize("isAuthenticated()")
     @GetMapping("/create")
     public String questionCreate(QuestionForm questionForm) {
@@ -54,14 +57,15 @@ public class QuestionController {
     @PreAuthorize("isAuthenticated()")
     @PostMapping("/create")
     public String questionCreate(@Valid QuestionForm questionForm, BindingResult bindingResult,
-                                 Principal principal) {
+                                 Principal principal, MultipartFile  file) throws Exception {
         if (bindingResult.hasErrors()) {
             return "question_form";
         }
         SiteUser siteUser = this.userService.getUser(principal.getName());
-        this.questionService.create(questionForm.getSubject(), questionForm.getContent(), siteUser);
+        this.questionService.create(questionForm.getSubject(), questionForm.getContent(), siteUser, file);
         return "redirect:/question/list"; // 질문 저장후 질문목록으로 이동
     }
+    //---------질문 수정----------//
     @PreAuthorize("isAuthenticated()")
     @GetMapping("/modify/{id}")
     public  String questionModify(QuestionForm questionForm, @PathVariable("id") Integer id, Principal principal) {
@@ -74,11 +78,12 @@ public class QuestionController {
 
         return "question_form";
     }
-//---------질문 수정----------//
+
     @PreAuthorize("isAuthenticated")
     @PostMapping("/modify/{id}")
     public String questionModify(@Valid QuestionForm questionForm, BindingResult bindingResult,
-                                 Principal principal, @PathVariable("id") Integer id) {
+                                 Principal principal, @PathVariable("id") Integer id)  {
+
         if (bindingResult.hasErrors()) {
             return "question_form";
         }
